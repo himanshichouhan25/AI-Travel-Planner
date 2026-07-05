@@ -1,0 +1,23 @@
+# Python (Backend)
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Node (Frontend)
+node_modules/
+dist/
+dist-ssr/
+
+# Editor/OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

@@ -1,6 +1,8 @@
+# -------------------------
 # Python (Backend)
+# -------------------------
 __pycache__/
-*.pyc
+*.py[cod]
 venv/
 .venv/
 
@@ -9,15 +11,31 @@ venv/
 .env.local
 .env.*.local
 
-# Node (Frontend)
+# Database
+*.db
+*.sqlite3
+
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# -------------------------
+# Frontend
+# -------------------------
 node_modules/
 dist/
 dist-ssr/
 
-# Editor/OS
+# -------------------------
+# Logs
+# -------------------------
+logs/
+*.log
+
+# -------------------------
+# Editor / OS
+# -------------------------
 .vscode/
+.idea/
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log

@@ -71,13 +71,7 @@ Planning a trip usually means 10 open tabs, spreadsheets, and stress. This proje
 
 ---
 
-## 🎬 Demo
 
-<div align="center">
-  <img src="./demo/demo.gif" alt="Demo GIF" width="80%">
-</div>
-
----
 
 ## 🏗️ Architecture
 

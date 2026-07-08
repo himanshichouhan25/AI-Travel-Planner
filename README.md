@@ -9,6 +9,15 @@
 <br/>
 
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=himanshichouhan25%2Fai-travel-planner&label=Visitors&countColor=%23A855F7)
+![Made with Love](https://img.shields.io/badge/Made%20with-%E2%9D%A4-A855F7?style=for-the-badge)
+
+<br/>
+
+<img src="https://skillicons.dev/icons?i=react,vite,tailwind,fastapi,python,sqlite&theme=dark" />
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=3&section=header"/>
 ![Stars](https://img.shields.io/github/stars/himanshichouhan25/ai-travel-planner?style=for-the-badge&color=A855F7)
 ![Forks](https://img.shields.io/github/forks/himanshichouhan25/ai-travel-planner?style=for-the-badge&color=8B5CF6)
 ![License](https://img.shields.io/badge/license-MIT-6D28D9?style=for-the-badge)
@@ -24,6 +33,12 @@
 </div>
 
 ---
+
+---
+
+<div align="center">
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=18&duration=2500&pause=1000&color=8B5CF6&center=true&vCenter=true&width=500&lines=%F0%9F%A7%A0+4+AI+Agents+Working+Together;%E2%9A%A1+Real-time+Weather+%2B+Budget+Sync;%F0%9F%8C%8D+Explore+Anywhere%2C+Plan+Instantly" />
+</div>
 
 ## 🌍 About The Project
 
@@ -71,7 +86,19 @@ Planning a trip usually means 10 open tabs, spreadsheets, and stress. This proje
 
 ---
 
+## 🎬 Demo
 
+<div align="center">
+  <img src="./demo/demo.gif" alt="Demo GIF" width="80%">
+</div>
+
+---
+
+---
+
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=3&section=header"/>
+</div>
 
 ## 🏗️ Architecture
 
@@ -373,8 +400,8 @@ If this project helped you, please consider:
 ---
 
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=150&section=footer"/>
 
-Made  by **Himanshi Chouhan**
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=800&color=A855F7&center=true&vCenter=true&width=400&lines=Made+with+%E2%9D%A4+by+Himanshi+Chouhan" />
 
 </div>

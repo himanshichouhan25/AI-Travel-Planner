@@ -1,26 +1,12 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=220&section=header&text=AI%20Travel%20Planner&fontSize=48&fontColor=ffffff&animation=fadeIn&desc=Your%20Personal%20Agentic%20AI%20Trip%20Architect&descAlignY=60&descSize=18" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=A855F7,6D28D9,1E1B4B&height=220&section=header&text=AI%20Travel%20Planner&fontSize=48&fontColor=ffffff&animation=fadeIn&desc=Your%20Personal%20Agentic%20AI%20Trip%20Architect&descAlignY=60&descSize=18" width="100%"/>
 
 <br/>
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=24&duration=3000&pause=800&color=A855F7&center=true&vCenter=true&width=600&lines=Plan+Smarter.+Travel+Better.;Powered+by+Multi-Agent+AI+%F0%9F%A4%96;CrewAI+%2B+Groq+%2B+FastAPI+%2B+React)](https://git.io/typing-svg)
 
 <br/>
-
-![Visitors](https://api.visitorbadge.io/api/visitors?path=himanshichouhan25%2Fai-travel-planner&label=Visitors&countColor=%23A855F7)
-![Made with Love](https://img.shields.io/badge/Made%20with-%E2%9D%A4-A855F7?style=for-the-badge)
-
-<br/>
-
-<img src="https://skillicons.dev/icons?i=react,vite,tailwind,fastapi,python,sqlite&theme=dark" />
-
-<br/>
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=3&section=header"/>
-![Stars](https://img.shields.io/github/stars/himanshichouhan25/ai-travel-planner?style=for-the-badge&color=A855F7)
-![Forks](https://img.shields.io/github/forks/himanshichouhan25/ai-travel-planner?style=for-the-badge&color=8B5CF6)
-![License](https://img.shields.io/badge/license-MIT-6D28D9?style=for-the-badge)
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -29,6 +15,14 @@
 ![Groq](https://img.shields.io/badge/Groq-F55036?style=for-the-badge)
 ![Tailwind](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+
+<br/>
+
+<img src="https://skillicons.dev/icons?i=react,vite,tailwind,fastapi,python,sqlite&theme=dark" />
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=3&section=header&animation=twinkling"/>
 
 </div>
 
@@ -86,19 +80,6 @@ Planning a trip usually means 10 open tabs, spreadsheets, and stress. This proje
 
 ---
 
-## 🎬 Demo
-
-<div align="center">
-  <img src="./demo/demo.gif" alt="Demo GIF" width="80%">
-</div>
-
----
-
----
-
-<div align="center">
-<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=3&section=header"/>
-</div>
 
 ## 🏗️ Architecture
 
@@ -349,9 +330,10 @@ npm run dev
 
 <div align="center">
 
-![Stats](https://github-readme-stats.vercel.app/api?username=himanshichouhan25&show_icons=true&theme=tokyonight&hide_border=true)
 ![Streak](https://github-readme-streak-stats.herokuapp.com/?user=himanshichouhan25&theme=tokyonight&hide_border=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=himanshichouhan25&layout=compact&theme=tokyonight&hide_border=true)
+
+<br/>
+
 
 </div>
 
@@ -380,28 +362,19 @@ Distributed under the **MIT License**. See `LICENSE` for details.
 <div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-himanshichouhan25-181717?style=for-the-badge&logo=github)](https://github.com/himanshichouhan25)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](#)
-[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](#)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/himanshi-chouhan-69180a339/)
+[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:chouhanhimanshi777@gmail.com)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Visit-6D28D9?style=for-the-badge&logo=firefox)](#)
 
 </div>
 
 ---
 
-## ⭐ Support
 
-If this project helped you, please consider:
-
-- ⭐ **Starring** the repo
-- 🍴 **Forking** it
-- 🐛 **Reporting issues**
-- 🤝 **Contributing**
-
----
 
 <div align="center">
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=150&section=footer"/>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=800&color=A855F7&center=true&vCenter=true&width=400&lines=Made+with+%E2%9D%A4+by+Himanshi+Chouhan" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&duration=3000&pause=800&color=A855F7&center=true&vCenter=true&width=400&lines=Made+by+Himanshi+Chouhan" />
 
 </div>

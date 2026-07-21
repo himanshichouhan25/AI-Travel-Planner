@@ -50,8 +50,17 @@ const Preferences = () => {
         travel_style: data.travel_style || "",
       });
     } catch (error) {
-      console.error(error);
-      toast.error("Failed to load preferences.");
+      if (error.response?.status === 404) {
+        // Safe fallback for new users who haven't saved preferences yet
+        setFormData({
+          preferred_destination_type: "",
+          budget_range: "",
+          travel_style: "",
+        });
+      } else {
+        console.error(error);
+        toast.error("Failed to load preferences.");
+      }
     } finally {
       setLoading(false);
     }
@@ -124,7 +133,7 @@ const Preferences = () => {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-8 bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-100 dark:border-slate-850 shadow-xl shadow-slate-100/50 dark:shadow-none transition-colors duration-300">
+      <form onSubmit={handleSubmit} className="space-y-8 bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-100/50 dark:shadow-none transition-colors duration-300">
         
         {/* Preferred Destination */}
         <div className="space-y-3">
@@ -143,7 +152,7 @@ const Preferences = () => {
                   className={`flex items-center gap-3 p-4 rounded-2xl border text-left transition duration-300 ${
                     isSelected
                       ? "border-blue-500 bg-blue-50/40 dark:bg-blue-950/20 ring-2 ring-blue-500/20 text-blue-600 dark:text-blue-400 font-semibold"
-                      : "border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-800 hover:bg-slate-50/50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 text-slate-700 dark:text-slate-350"
+                      : "border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-800 hover:bg-slate-50/50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 text-slate-700 dark:text-slate-300"
                   }`}
                 >
                   <div className={`p-2.5 rounded-xl border ${type.color}`}>
@@ -175,7 +184,7 @@ const Preferences = () => {
                   className={`flex flex-col p-5 rounded-2xl border text-left transition duration-300 ${
                     isSelected
                       ? "border-blue-500 bg-blue-50/40 dark:bg-blue-950/20 ring-2 ring-blue-500/20 text-blue-600 dark:text-blue-400"
-                      : "border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-800 hover:bg-slate-50/50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 text-slate-700 dark:text-slate-350"
+                      : "border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-800 hover:bg-slate-50/50 dark:hover:bg-slate-800/50 hover:border-slate-200 dark:hover:border-slate-700 text-slate-700 dark:text-slate-300"
                   }`}
                 >
                   <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 self-start mb-3">

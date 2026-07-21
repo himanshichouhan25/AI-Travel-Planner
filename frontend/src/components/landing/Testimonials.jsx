@@ -23,7 +23,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+    <section id="testimonials" className="py-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="text-center mb-14">
@@ -49,7 +49,7 @@ const Testimonials = () => {
                 ))}
               </div>
 
-              <p className="text-slate-600 dark:text-slate-350 mb-6 italic leading-relaxed text-sm">
+              <p className="text-slate-600 dark:text-slate-300 mb-6 italic leading-relaxed text-sm">
                 "{item.review}"
               </p>
 

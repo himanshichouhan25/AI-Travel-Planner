@@ -3,11 +3,20 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 
 from app.config import settings
 
+# Extract and normalize database URL (PostgreSQL prefix fix)
+db_url = settings.DATABASE_URL
+if db_url.startswith("postgres://"):
+    db_url = db_url.replace("postgres://", "postgresql://", 1)
+
 # Create database engine
-engine = create_engine(
-    settings.DATABASE_URL,
-    connect_args={"check_same_thread": False}  # Required for SQLite
-)
+if db_url.startswith("sqlite"):
+    engine = create_engine(
+        db_url,
+        connect_args={"check_same_thread": False}  # Required for SQLite
+    )
+else:
+    engine = create_engine(db_url)
+
 
 # Create database session
 SessionLocal = sessionmaker(

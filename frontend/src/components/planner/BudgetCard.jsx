@@ -1,4 +1,28 @@
 import { Coins, Lightbulb, Hotel, Utensils, Car, Ticket, ShoppingBag } from "lucide-react";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.06,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    },
+  },
+};
 
 const BudgetCard = ({ budget, travelStyle, tips }) => {
   const style = (travelStyle || "standard").toLowerCase();
@@ -108,50 +132,70 @@ const BudgetCard = ({ budget, travelStyle, tips }) => {
       {/* Itemized Distribution List */}
       <div className="space-y-4 mb-6">
         <h3 className="font-semibold text-slate-700 dark:text-slate-200 text-sm">Distributed Allocation Breakdown</h3>
-        {breakdown.map((cat, idx) => {
-          const Icon = cat.icon;
-          return (
-            <div key={idx} className="space-y-1.5">
-              <div className="flex justify-between items-center text-sm">
-                <div className="flex items-center gap-2 font-medium text-slate-700 dark:text-slate-300">
-                  <span className={`p-1.5 rounded-lg border ${cat.bgLight} ${cat.textColor} ${cat.borderColor}`}>
-                    <Icon size={14} />
-                  </span>
-                  <span>{cat.name}</span>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          className="space-y-4"
+        >
+          {breakdown.map((cat, idx) => {
+            const Icon = cat.icon;
+            return (
+              <motion.div key={idx} variants={itemVariants} className="space-y-1.5">
+                <div className="flex justify-between items-center text-sm">
+                  <div className="flex items-center gap-2 font-medium text-slate-700 dark:text-slate-300">
+                    <span className={`p-1.5 rounded-lg border ${cat.bgLight} ${cat.textColor} ${cat.borderColor}`}>
+                      <Icon size={14} />
+                    </span>
+                    <span>{cat.name}</span>
+                  </div>
+                  <div className="text-right">
+                    <span className="font-bold text-slate-800 dark:text-slate-200">₹{cat.amount.toLocaleString()}</span>
+                    <span className="text-slate-400 text-xs ml-1.5">({cat.percentage}%)</span>
+                  </div>
                 </div>
-                <div className="text-right">
-                  <span className="font-bold text-slate-800 dark:text-slate-200">₹{cat.amount.toLocaleString()}</span>
-                  <span className="text-slate-400 text-xs ml-1.5">({cat.percentage}%)</span>
+                
+                {/* Progress Slider */}
+                <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: `${cat.percentage}%` }}
+                    transition={{ type: "spring", stiffness: 50, damping: 12, delay: idx * 0.05 }}
+                    className={`h-full ${cat.color} rounded-full`}
+                  />
                 </div>
-              </div>
-              
-              {/* Progress Slider */}
-              <div className="w-full h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                <div
-                  style={{ width: `${cat.percentage}%` }}
-                  className={`h-full ${cat.color} rounded-full`}
-                />
-              </div>
-            </div>
-          );
-        })}
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
 
       {/* Budget Tips */}
       {tips && tips.length > 0 && (
-        <div className="pt-4 border-t border-slate-100 dark:border-slate-800">
+        <div className="pt-4 border-t border-slate-100 dark:border-slate-800/80">
           <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-3 flex items-center gap-2 text-sm">
-            <Lightbulb className="text-amber-500 animate-pulse" size={16} />
+            <Lightbulb className="text-purple-600 dark:text-purple-400" size={16} />
             Budget Tips & Optimization
           </h3>
-          <ul className="space-y-2 text-slate-600 dark:text-slate-400 text-xs">
+          <motion.ul
+            variants={containerVariants}
+            initial="hidden"
+            animate="show"
+            className="space-y-2 text-xs"
+          >
             {tips.map((tip, idx) => (
-              <li key={idx} className="flex items-start gap-2 bg-slate-50 dark:bg-slate-850 rounded-lg p-2.5 border border-slate-100/60 dark:border-slate-800/80 leading-relaxed">
-                <span className="text-amber-500 shrink-0 font-bold">💡</span>
-                <span>{tip}</span>
-              </li>
+              <motion.li
+                key={idx}
+                variants={itemVariants}
+                className="flex items-start gap-2 bg-purple-50/20 dark:bg-purple-950/10 rounded-lg p-2.5 border border-purple-100/30 dark:border-purple-900/20 leading-relaxed"
+              >
+                <span className="text-purple-600 dark:text-purple-400 shrink-0 mt-0.5">
+                  <Lightbulb size={12} className="fill-purple-100 dark:fill-purple-950/30 text-purple-600 dark:text-purple-400" />
+                </span>
+                <span className="text-slate-600 dark:text-slate-300">{tip}</span>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </div>
       )}
     </div>

@@ -1,4 +1,29 @@
 import { CloudRain, CheckSquare } from "lucide-react";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, scale: 0.95, y: 5 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 15,
+    },
+  },
+};
 
 const WeatherCard = ({ weatherSummary, packingList }) => {
   return (
@@ -15,14 +40,23 @@ const WeatherCard = ({ weatherSummary, packingList }) => {
             <CheckSquare className="text-blue-500" size={18} />
             Recommended Packing List
           </h3>
-          <ul className="grid grid-cols-2 gap-2 text-slate-600 dark:text-slate-350 text-sm">
+          <motion.ul
+            variants={containerVariants}
+            initial="hidden"
+            animate="show"
+            className="grid grid-cols-2 gap-2 text-slate-600 dark:text-slate-300 text-sm"
+          >
             {packingList.map((item, idx) => (
-              <li key={idx} className="flex items-center gap-2 bg-slate-50 dark:bg-slate-850 rounded-lg p-2 border border-slate-100/60 dark:border-slate-800/80">
+              <motion.li
+                key={idx}
+                variants={itemVariants}
+                className="flex items-center gap-2 bg-slate-50 dark:bg-slate-800/50 rounded-lg p-2 border border-slate-100/60 dark:border-slate-800/80"
+              >
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0"></span>
                 <span className="truncate">{item}</span>
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </div>
       )}
     </div>

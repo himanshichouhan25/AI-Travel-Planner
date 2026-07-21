@@ -2,7 +2,7 @@ import CustomButton from "../ui/CustomButton";
 
 const CTA = () => {
   return (
-    <section className="py-24 bg-white dark:bg-slate-900 transition-colors duration-300">
+    <section id="pricing" className="py-24 bg-white dark:bg-slate-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6">
         <div className="rounded-3xl bg-gradient-to-r from-[#6D5DF6] to-[#8B5CF6] p-16 text-center text-white shadow-xl shadow-indigo-500/10">
 

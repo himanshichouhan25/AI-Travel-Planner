@@ -28,7 +28,7 @@ const Planner = () => {
       {/* Render the details only when tripData is successfully generated */}
       {tripData && tripData.structured_plan && (
         <div className="mt-12 space-y-8 animate-fade-in">
-          <div className="border-t border-slate-100 dark:border-slate-850 pt-8">
+          <div className="border-t border-slate-100 dark:border-slate-800 pt-8">
             <h2 className="text-3xl font-extrabold text-slate-855 dark:text-slate-100 text-center mb-2">
               Your Personalized Itinerary
             </h2>
@@ -73,7 +73,7 @@ const Planner = () => {
 
       {!tripData && (
         <div className="mt-12 text-center text-slate-400 dark:text-slate-500 py-16 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-3xl bg-slate-50/50 dark:bg-slate-900/10 transition-colors duration-300">
-          <p className="text-lg font-medium text-slate-700 dark:text-slate-350">No Travel Plan Generated Yet</p>
+          <p className="text-lg font-medium text-slate-700 dark:text-slate-300">No Travel Plan Generated Yet</p>
           <p className="text-sm mt-1 max-w-sm mx-auto leading-relaxed text-slate-500 dark:text-slate-400">
             Fill in the destination, budget, and days above to generate a full visual travel itinerary.
           </p>

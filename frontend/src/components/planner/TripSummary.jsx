@@ -17,16 +17,16 @@ const TripSummary = ({ summary, hotels }) => {
           </h3>
           <div className="space-y-4">
             {hotels.map((hotel, idx) => (
-              <div key={idx} className="bg-slate-50 dark:bg-slate-850 rounded-xl p-4 border border-slate-100/60 dark:border-slate-800/80">
+              <div key={idx} className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4 border border-slate-100/60 dark:border-slate-800/80">
                 <div className="font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-                  <span className="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-450 text-xs font-bold">
+                  <span className="flex items-center justify-center w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 text-xs font-bold">
                     {idx + 1}
                   </span>
                   {hotel.name}
                 </div>
                 <div className="text-slate-500 dark:text-slate-400 text-sm mt-1">{hotel.address}</div>
                 {hotel.reason && (
-                  <div className="text-slate-600 dark:text-slate-350 text-sm mt-2 pt-2 border-t border-slate-200/60 dark:border-slate-800 italic flex items-start gap-1">
+                  <div className="text-slate-600 dark:text-slate-300 text-sm mt-2 pt-2 border-t border-slate-200/60 dark:border-slate-800 italic flex items-start gap-1">
                     <Sparkles className="text-amber-500 shrink-0 mt-0.5" size={14} />
                     <span>{hotel.reason}</span>
                   </div>

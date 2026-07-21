@@ -68,7 +68,7 @@ export default function Header() {
           <input
             type="text"
             placeholder="Search trips..."
-            className="bg-transparent outline-none ml-2 w-full text-slate-700 dark:text-slate-350 placeholder-slate-400 text-sm"
+            className="bg-transparent outline-none ml-2 w-full text-slate-700 dark:text-slate-300 placeholder-slate-400 text-sm"
           />
         </div>
 

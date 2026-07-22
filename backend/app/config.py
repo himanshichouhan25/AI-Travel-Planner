@@ -32,6 +32,11 @@ class Settings(BaseSettings):
     GEOAPIFY_API_KEY: str
     GEOAPIFY_BASE_URL: str = "https://api.geoapify.com/v2"
 
+    # ==========================
+    # CORS
+    # ==========================
+    ALLOWED_ORIGINS: str = "http://localhost:5173"
+
     model_config = SettingsConfigDict(
         env_file=".env",
         extra="ignore",

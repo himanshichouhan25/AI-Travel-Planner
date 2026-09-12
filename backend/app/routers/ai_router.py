@@ -1,20 +1,54 @@
 import json
+from typing import Optional
 from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy.orm import Session
 
-from app.schemas.ai_schema import TravelPlanRequest
-from app.core.dependencies import get_current_user
+from app.database import get_db
+from app.schemas.ai_schema import (
+    TravelPlanRequest,
+    AIChatRequest,
+    AIChatResponse,
+)
+from app.core.dependencies import get_current_user, get_optional_current_user
 from app.models.user import User
 
 from app.tools.weather_tool import get_weather
 from app.tools.hotel_tool import get_hotels
 from app.tools.places_tool import get_places
 from app.tools.budget_tool import calculate_budget
-from app.services.ai_service import client, settings
+from app.services.ai_service import client, settings, chat_with_assistant
 
 router = APIRouter(
     prefix="/ai",
     tags=["AI"],
 )
+
+
+@router.post("/chat", response_model=AIChatResponse)
+def ai_chat(
+    data: AIChatRequest,
+    db: Session = Depends(get_db),
+    current_user: Optional[User] = Depends(get_optional_current_user),
+):
+    """
+    Conversational AI Travel Assistant endpoint.
+    Maintains conversation memory, accesses user trip/preferences context when authenticated,
+    fetches live weather data when applicable, and responds naturally to both travel and general queries.
+    """
+    try:
+        reply = chat_with_assistant(
+            message=data.message,
+            conversation_history=data.conversation_history,
+            current_user=current_user,
+            db=db,
+        )
+        return AIChatResponse(response=reply)
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Chat error: {str(e)}",
+        )
+
 
 
 @router.post("/plan-trip")
@@ -107,7 +141,7 @@ You MUST return a JSON object with the following exact structure:
             ],
             response_format={"type": "json_object"},
             temperature=0.3,
-            max_tokens=2500,
+            max_tokens=2000,
         )
 
         result_text = response.choices[0].message.content

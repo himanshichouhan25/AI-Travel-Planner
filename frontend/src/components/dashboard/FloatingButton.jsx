@@ -1,16 +1,16 @@
-import { Sparkles } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Sparkles, X } from "lucide-react";
 
-export default function FloatingButton() {
-  const navigate = useNavigate();
-
+export default function FloatingButton({ onClick, isOpen }) {
   return (
     <button
-      onClick={() => navigate("/planner")}
+      onClick={onClick}
+      aria-label={isOpen ? "Close AI Travel Assistant" : "Open AI Travel Assistant"}
       className="
         fixed
-        bottom-8
-        right-8
+        bottom-20
+        md:bottom-8
+        right-6
+        md:right-8
         w-16
         h-16
         rounded-full
@@ -27,9 +27,14 @@ export default function FloatingButton() {
         transition-all
         duration-300
         z-50
+        cursor-pointer
       "
     >
-      <Sparkles size={28} />
+      {isOpen ? (
+        <X size={28} className="transition-transform duration-200" />
+      ) : (
+        <Sparkles size={28} />
+      )}
     </button>
   );
 }

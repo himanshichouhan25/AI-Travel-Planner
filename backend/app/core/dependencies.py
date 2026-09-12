@@ -1,3 +1,4 @@
+from typing import Optional
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
@@ -7,6 +8,29 @@ from app.models.user import User
 from app.core.security import verify_access_token
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
+oauth2_scheme_optional = OAuth2PasswordBearer(tokenUrl="/auth/login", auto_error=False)
+
+
+def get_optional_current_user(
+    token: Optional[str] = Depends(oauth2_scheme_optional),
+    db: Session = Depends(get_db),
+) -> Optional[User]:
+    """
+    Returns the authenticated User if a valid Bearer token is provided,
+    otherwise returns None without raising an HTTP 401 error.
+    """
+    if not token:
+        return None
+    try:
+        payload = verify_access_token(token)
+        if not payload:
+            return None
+        user_id = payload.get("sub")
+        if not user_id:
+            return None
+        return db.query(User).filter(User.id == int(user_id)).first()
+    except Exception:
+        return None
 
 
 def get_current_user(

@@ -1,11 +1,15 @@
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import Sidebar from "../components/dashboard/Sidebar";
 import Header from "../components/dashboard/Header";
 import FloatingButton from "../components/dashboard/FloatingButton";
 import MobileNavBar from "../components/dashboard/MobileNavBar";
+import ChatDrawer from "../components/chat/ChatDrawer";
 
 export default function DashboardLayout() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
   return (
     <div className="flex min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors duration-300">
       {/* Sidebar (Desktop only) */}
@@ -22,8 +26,17 @@ export default function DashboardLayout() {
         </main>
       </div>
 
-      {/* Floating AI Button (For quick planner access) */}
-      <FloatingButton />
+      {/* Floating AI Assistant Button */}
+      <FloatingButton
+        onClick={() => setIsChatOpen((prev) => !prev)}
+        isOpen={isChatOpen}
+      />
+
+      {/* AI Travel Assistant Chat Drawer / Popup */}
+      <ChatDrawer
+        isOpen={isChatOpen}
+        onClose={() => setIsChatOpen(false)}
+      />
 
       {/* Mobile Sticky Bottom Tab Navigation (Mobile only) */}
       <MobileNavBar />

@@ -18,7 +18,7 @@ from app.routers.ai_router import router as ai_router
 # Create Database Tables
 Base.metadata.create_all(bind=engine)
 
-# Create FastAPI App
+# Create FastAPI App (reloaded with updated model configuration)
 app = FastAPI(
     title="AI Travel Planner API",
     version="1.0.0",

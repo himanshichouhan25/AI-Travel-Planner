@@ -84,6 +84,10 @@ Planning a trip usually means 10 open tabs, spreadsheets, and stress. This proje
 |:---:|
 | ![Profile](./screenshots/profile.png) |
 
+| AI Travel Assistant | AI Assistant Conversation |
+|:---:|:---:|
+| ![AI Assistant](./screenshots/ai-assistant.png) | ![AI Assistant Conversation](./screenshots/ai-assistant-conversation.png) |
+
 ---
 
 ## 🎬 Demo
